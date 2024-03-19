@@ -18,26 +18,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3B-q2-bgJ">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="223" width="418.33333333333331" height="538"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dH-A9-iVF">
+                                <rect key="frame" x="95" y="94" width="203" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e5X-uf-bVR">
+                                <rect key="frame" x="95" y="154" width="203" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5B-HS-nDc">
+                                <rect key="frame" x="146" y="769" width="101" height="49"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FDs-ux-wb0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b3B-q2-bgJ" secondAttribute="bottom" id="D5H-3L-uKr"/>
-                            <constraint firstItem="b3B-q2-bgJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PBr-ht-FHP"/>
-                            <constraint firstItem="b3B-q2-bgJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pof-Wj-iRO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b3B-q2-bgJ" secondAttribute="trailing" id="u7G-Mp-ln9"/>
+                            <constraint firstItem="8dH-A9-iVF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Hp-6f-eAq"/>
+                            <constraint firstItem="b3B-q2-bgJ" firstAttribute="top" secondItem="e5X-uf-bVR" secondAttribute="bottom" constant="35" id="Au3-gz-jce"/>
+                            <constraint firstItem="C5B-HS-nDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="In0-fx-zxY"/>
+                            <constraint firstItem="e5X-uf-bVR" firstAttribute="top" secondItem="8dH-A9-iVF" secondAttribute="bottom" constant="26" id="JGp-5g-Ovd"/>
+                            <constraint firstItem="8dH-A9-iVF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e5X-uf-bVR" secondAttribute="trailing" id="Ov2-NK-DiH"/>
+                            <constraint firstItem="8dH-A9-iVF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="PrP-q4-MhJ"/>
+                            <constraint firstItem="b3B-q2-bgJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-57" id="TGN-sd-2Jq"/>
+                            <constraint firstItem="8dH-A9-iVF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e5X-uf-bVR" secondAttribute="leading" id="V8p-ij-PtL"/>
+                            <constraint firstItem="b3B-q2-bgJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WEh-fl-aXl"/>
+                            <constraint firstItem="C5B-HS-nDc" firstAttribute="centerX" secondItem="8dH-A9-iVF" secondAttribute="centerX" id="fMl-1o-00Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e5X-uf-bVR" secondAttribute="trailing" constant="95" id="hGc-hi-YuU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b3B-q2-bgJ" secondAttribute="trailing" constant="-41.333333333333314" id="k28-HO-aNx"/>
+                            <constraint firstItem="C5B-HS-nDc" firstAttribute="top" secondItem="b3B-q2-bgJ" secondAttribute="bottom" constant="8" id="xl1-3A-kaI"/>
+                            <constraint firstItem="C5B-HS-nDc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ynS-6W-TdA"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentText" destination="e5X-uf-bVR" id="YvD-FU-yE3"/>
                         <outlet property="mapView" destination="b3B-q2-bgJ" id="xNz-AT-Q9C"/>
+                        <outlet property="nameText" destination="8dH-A9-iVF" id="ww8-5z-tbm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
